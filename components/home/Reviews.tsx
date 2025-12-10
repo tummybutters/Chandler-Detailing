@@ -169,7 +169,7 @@ export default function Reviews() {
 
             <div className="text-center mt-8 px-4">
                 <a
-                    href="https://www.google.com/search?q=chandlers+detailing+reviews"
+                    href="https://share.google/DHt7Lv3NiTWpndep1"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-primary px-8 py-3 rounded-full font-semibold inline-flex items-center gap-2 group text-sm w-full sm:w-auto justify-center"

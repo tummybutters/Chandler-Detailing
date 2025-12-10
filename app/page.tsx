@@ -1,5 +1,6 @@
 "use client";
 
+import type { Metadata } from "next";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
@@ -23,6 +24,29 @@ import ShinyButton from "@/components/ui/ShinyButton";
 
 // Services Data for How It Works
 import { SERVICE_PROCESS_STEPS } from "@/lib/data/services";
+
+export const metadata: Metadata = {
+  title: "Orange County Mobile Car Detailing & Ceramic Coating",
+  description:
+    "Premium mobile auto detailing, paint correction, and ceramic coating proudly serving Lake Forest, Irvine, Mission Viejo, and surrounding Orange County neighborhoods.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Orange County Mobile Car Detailing & Ceramic Coating",
+    description:
+      "Chandler's Detailing delivers luxury-grade detailing, ceramic coating, and maintenance packages directly to your driveway anywhere in Orange County.",
+    url: "/",
+    images: [
+      {
+        url: "/newherochandler.png",
+        width: 1200,
+        height: 630,
+        alt: "Mobile detailing service by Chandler's Detailing in Orange County",
+      },
+    ],
+  },
+};
 
 const SHOW_TESTIMONIALS = false;
 function Hero() {

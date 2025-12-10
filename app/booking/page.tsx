@@ -1,11 +1,35 @@
 "use client";
 
+import type { Metadata } from "next";
 import Link from "next/link";
 import { useEffect } from "react";
 import { PHONE_LINK, PHONE_NUMBER } from "@/lib/constants";
 import { QUICK_SERVICE_OPTIONS } from "@/lib/data/services";
 import Cal, { getCalApi } from "@calcom/embed-react";
 import { Phone, MessageCircle, Clock } from "lucide-react";
+
+export const metadata: Metadata = {
+    title: "Book Orange County Mobile Detailing Appointment",
+    description:
+        "Reserve your Chandler's Detailing appointment online for mobile detailing, paint correction, or ceramic coating anywhere in Orange County.",
+    alternates: {
+        canonical: "/booking",
+    },
+    openGraph: {
+        title: "Book Orange County Mobile Detailing Appointment",
+        description:
+            "Choose a convenient time for Chandler's Detailing to visit your home or office throughout Lake Forest, Irvine, Mission Viejo, and nearby cities.",
+        url: "/booking",
+        images: [
+            {
+                url: "/newherochandler.png",
+                width: 1200,
+                height: 630,
+                alt: "Book mobile detailing appointment with Chandler's Detailing",
+            },
+        ],
+    },
+};
 
 function PageHeader() {
     return (

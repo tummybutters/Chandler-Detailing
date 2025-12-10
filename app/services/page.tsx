@@ -1,5 +1,6 @@
 "use client";
 
+import type { Metadata } from "next";
 import { useState } from "react";
 import { BOOKING_URL } from "@/lib/constants";
 import {
@@ -15,6 +16,29 @@ import {
     Clock,
     ChevronDown,
 } from "lucide-react";
+
+export const metadata: Metadata = {
+    title: "Orange County Auto Detailing Services & Pricing",
+    description:
+        "Explore Chandler's Detailing service menu including maintenance details, interior revivals, paint correction, and ceramic coating packages for Lake Forest, Irvine, Mission Viejo, and surrounding Orange County cities.",
+    alternates: {
+        canonical: "/services",
+    },
+    openGraph: {
+        title: "Orange County Auto Detailing Services & Pricing",
+        description:
+            "Choose the perfect detailing package, add-ons, or ceramic coating treatment delivered on-site anywhere in Orange County.",
+        url: "/services",
+        images: [
+            {
+                url: "/ceramic-coating.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Orange County ceramic coating and mobile detailing services",
+            },
+        ],
+    },
+};
 
 function PageHeader() {
     return (
