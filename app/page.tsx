@@ -672,7 +672,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* <Reviews /> */}
+      <Reviews />
       <Showcase />
       <HowItWorks />
       <ServicesPreview />

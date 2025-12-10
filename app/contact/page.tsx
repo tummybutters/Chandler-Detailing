@@ -267,14 +267,17 @@ function ContactInfo() {
                 </div>
             </div>
 
-            <div className="card p-2 overflow-hidden">
-                <div className="aspect-video rounded-xl bg-bg-elevated flex items-center justify-center">
-                    <div className="text-center">
-                        <MapPin className="w-12 h-12 text-primary-400/40 mx-auto mb-3" />
-                        <p className="text-accent-offwhite/40 text-sm">Service Area Map</p>
-                        <p className="text-accent-offwhite/30 text-xs mt-1">Google Maps integration available</p>
-                    </div>
-                </div>
+            <div className="card p-2 overflow-hidden h-80 sm:h-96">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53089.07636990422!2d-117.72898956891081!3d33.64692742728954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dce878d6540323%3A0x62953ba878844873!2sLake%20Forest%2C%20CA!5e0!3m2!1sen!2sus!4v1709923456789!5m2!1sen!2sus"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="rounded-xl grayscale hover:grayscale-0 transition-all duration-500"
+                />
             </div>
         </div>
     );
