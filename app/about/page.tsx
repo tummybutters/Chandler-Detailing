@@ -57,19 +57,17 @@ function OurStory() {
                         </h2>
                         <div className="space-y-4 mt-6 text-gray-600 leading-relaxed text-base sm:text-lg">
                             <p>
-                                Chandler&apos;s Detailing started with a simple belief: every car deserves to look its absolute best.
-                                What began as a weekend hobby quickly grew into a mission to bring premium detailing services
-                                directly to car owners across Southern California.
+                                I&apos;m a college student at Long Beach State doing this completely on my own to pay for school and flight school.
+                                Chandler&apos;s Detailing started as a way to fund my education, but it quickly became my passion.
                             </p>
                             <p>
-                                Growing up in SoCal, surrounded by car culture and beautiful coastlines, we developed
-                                an appreciation for both automotive excellence and environmental responsibility. That&apos;s why
-                                we use only eco-friendly, water-conscious products that deliver stunning results.
+                                I started detailing to build something for myself and create a future I could be proud of.
+                                Every car I work on represents a step towards my goals, which is why I take such immense pride in my work.
                             </p>
                             <p>
-                                Today, our team of certified detailing professionals serves hundreds of satisfied clients,
-                                from daily drivers to exotic supercars. We bring the same passion and attention to detail
-                                to every vehicle we touch.
+                                This isn&apos;t just a job for me; it&apos;s how I&apos;m making my future happen.
+                                When you book with me, you&apos;re supporting a local student who is committed to excellence
+                                and driven to succeed—both on the ground in your driveway and eventually in the sky.
                             </p>
                         </div>
                     </div>

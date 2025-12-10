@@ -130,7 +130,7 @@ function ContactForm() {
                         value={formData.phone}
                         onChange={handleChange}
                         className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-primary-500 focus:ring-1 focus:ring-primary-500 transition-all"
-                        placeholder="(555) 123-4567"
+                        placeholder={PHONE_NUMBER}
                         autoComplete="tel"
                         inputMode="tel"
                     />

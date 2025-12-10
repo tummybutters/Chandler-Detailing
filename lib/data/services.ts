@@ -7,7 +7,6 @@ import {
     Wrench,
     Sun,
     Dog,
-    Zap,
 } from "lucide-react";
 
 type IconEntry = LucideIcon;
@@ -80,7 +79,7 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
     {
         id: "maintenance",
         name: "Maintenance Detail – Preservation Wash",
-        price: "Starting at $90+",
+        price: "Starting at $89.99",
         description: "Keeps your car fresh & protected between full details.",
         popular: false,
         features: [],
@@ -94,7 +93,7 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
     {
         id: "interior",
         name: "Interior Revival",
-        price: "Starting at $225+",
+        price: "Starting at $224.99",
         description: "Deep clean for that like-new interior.",
         popular: false,
         features: [],
@@ -108,7 +107,7 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
     {
         id: "exterior",
         name: "Exterior Gloss Restoration",
-        price: "Starting at $225+",
+        price: "Starting at $224.99",
         description: "Deep exterior clean & long-lasting gloss protection.",
         popular: false,
         features: [],
@@ -122,7 +121,7 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
     {
         id: "signature",
         name: "Signature Full Detail",
-        price: "Starting at $325+",
+        price: "Starting at $324.99",
         description: "Full inside & out detail with 6-month ceramic protection.",
         popular: true,
         features: [],
@@ -134,6 +133,33 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
             { vehicleType: "Oversized (Van, 3-row SUV)", price: "$425.99–$450.99" },
         ],
     },
+    {
+        id: "ceramic-level-1",
+        name: "Ceramic Coating – Level 1 (Bronze)",
+        price: "Contact for Pricing",
+        description: "Entry-level ceramic protection enhancing gloss and hydrophobicity.",
+        popular: false,
+        features: ["1 Year Protection", "Gloss Enhancement", "Hydrophobic Properties"],
+        pricingBreakdown: [],
+    },
+    {
+        id: "ceramic-level-2",
+        name: "Ceramic Coating – Level 2 (Silver)",
+        price: "Contact for Pricing",
+        description: "Intermediate protection offering deeper gloss and longer durability.",
+        popular: false,
+        features: ["3 Year Protection", "Paint Correction (One Step)", "Enhanced Depth"],
+        pricingBreakdown: [],
+    },
+    {
+        id: "ceramic-level-3",
+        name: "Ceramic Coating – Level 3 (Gold)",
+        price: "Contact for Pricing",
+        description: "Ultimate protection for the most discerning vehicle owners.",
+        popular: false,
+        features: ["5+ Year Protection", "Multi-Stage Paint Correction", "Maximum Gloss & Armor"],
+        pricingBreakdown: [],
+    },
 ];
 
 export const SERVICE_ADD_ONS: ServiceAddOn[] = [
@@ -142,7 +168,8 @@ export const SERVICE_ADD_ONS: ServiceAddOn[] = [
     { icon: Wrench, name: "Engine Bay Detail", price: "$75" },
     { icon: Sun, name: "Headlight Restoration", price: "$60" },
     { icon: Dog, name: "Pet Hair or Sand Removal", price: "+$30–$50" },
-    { icon: Droplets, name: "Detail Spray", price: "$25" },
+    { icon: Droplets, name: "Spray Wax", price: "$49.99" },
+    { icon: Sparkles, name: "Machine Ceramic Wax", price: "Contact for Pricing" },
 ];
 
 export const SERVICE_PROCESS_STEPS: ServiceProcessStep[] = [
@@ -155,7 +182,7 @@ export const SERVICE_PROCESS_STEPS: ServiceProcessStep[] = [
 export const SERVICE_FAQS: ServiceFaq[] = [
     {
         question: "How long does a detail take?",
-        answer: "Service times vary by package. Express Wash takes 30-45 minutes, while our Ultimate Detail can take 5-6 hours. Ceramic coating is a full-day service. We'll provide an accurate estimate when you book.",
+        answer: "Service times vary by package. Maintenance washes take about 1-2 hours, while our Signature Full Detail can take 4-6 hours. Ceramic coatings are full-day services. We'll provide an accurate estimate when you book.",
     },
     {
         question: "Do I need to provide water or electricity?",
@@ -163,7 +190,7 @@ export const SERVICE_FAQS: ServiceFaq[] = [
     },
     {
         question: "What areas do you serve?",
-        answer: "We serve all of Southern California, including Los Angeles, Orange County, San Diego, and surrounding areas. Contact us if you're unsure about your location.",
+        answer: "We proudly serve Lake Forest, Irvine, Mission Viejo, and surrounding Orange County areas. Contact us if you're unsure about your location.",
     },
     {
         question: "Are your products safe for all vehicles?",
@@ -180,8 +207,8 @@ export const SERVICE_FAQS: ServiceFaq[] = [
 ];
 
 export const QUICK_SERVICE_OPTIONS: QuickServiceOption[] = [
-    { id: "express", name: "Express Wash", price: "$49", duration: "30-45 min", icon: Droplets },
-    { id: "essential", name: "Essential Detail", price: "$129", duration: "1.5-2 hours", icon: Car },
-    { id: "premium", name: "Premium Detail", price: "$249", duration: "3-4 hours", icon: Sparkles },
-    { id: "ultimate", name: "Ultimate Detail", price: "$399", duration: "5-6 hours", icon: Shield },
+    { id: "maintenance", name: "Maintenance Detail", price: "From $89.99", duration: "1-2 hours", icon: Droplets },
+    { id: "interior", name: "Interior Revival", price: "From $224.99", duration: "3-4 hours", icon: Car },
+    { id: "exterior", name: "Exterior Gloss", price: "From $224.99", duration: "2-3 hours", icon: Sparkles },
+    { id: "signature", name: "Signature Full", price: "From $324.99", duration: "4-6 hours", icon: Shield },
 ];

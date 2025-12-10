@@ -8,7 +8,9 @@ import {
     EMAIL_LINK,
     INSTAGRAM_URL,
     FACEBOOK_URL,
+    TIKTOK_URL,
     SERVICE_AREA,
+    SERVICE_AREA_DETAILS,
 } from "@/lib/constants";
 
 const quickLinks = [
@@ -63,6 +65,25 @@ export default function Footer() {
                                 aria-label="Instagram"
                             >
                                 <Instagram className="w-5 h-5" />
+                            </a>
+                            <a
+                                href={TIKTOK_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-10 h-10 rounded-full bg-bg-elevated border border-white/10 flex items-center justify-center text-accent-offwhite/60 hover:text-primary-400 hover:border-primary-500/50 transition-all"
+                                aria-label="TikTok"
+                            >
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    className="w-5 h-5"
+                                >
+                                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+                                </svg>
                             </a>
                             <a
                                 href={FACEBOOK_URL}
@@ -133,7 +154,8 @@ export default function Footer() {
                             <li className="flex items-start gap-3">
                                 <MapPin className="w-5 h-5 text-primary-500 flex-shrink-0 mt-0.5" />
                                 <div className="text-accent-offwhite/60 text-sm">
-                                    {SERVICE_AREA}
+                                    <p className="font-medium text-white mb-1">{SERVICE_AREA}</p>
+                                    <p className="text-xs opacity-70">{SERVICE_AREA_DETAILS}</p>
                                 </div>
                             </li>
                         </ul>
@@ -146,7 +168,7 @@ export default function Footer() {
                         © {new Date().getFullYear()} Chandler&apos;s Detailing. All rights reserved.
                     </p>
                     <p className="text-accent-offwhite/40 text-sm">
-                        Proudly serving automotive enthusiasts across SoCal.
+                        Proudly serving {SERVICE_AREA_DETAILS}
                     </p>
                 </div>
             </div>

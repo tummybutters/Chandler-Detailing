@@ -2,19 +2,21 @@
 
 export const BOOKING_URL = "https://cal.com/chandlers-detailing";
 
-export const PHONE_NUMBER = "(555) 123-4567";
-export const PHONE_LINK = "tel:+15551234567";
+export const PHONE_NUMBER = "(949) 288-3648";
+export const PHONE_LINK = "tel:+19492883648";
 
-export const EMAIL = "info@chandlersdetailing.com";
-export const EMAIL_LINK = "mailto:info@chandlersdetailing.com";
+export const EMAIL = "hazlettc33@gmail.com";
+export const EMAIL_LINK = "mailto:hazlettc33@gmail.com";
 
-export const INSTAGRAM_HANDLE = "@chandlersdetailing";
-export const INSTAGRAM_URL = "https://instagram.com/chandlersdetailing";
+export const INSTAGRAM_HANDLE = "@Chandlers_Detailing";
+export const INSTAGRAM_URL = "https://instagram.com/Chandlers_Detailing";
+export const TIKTOK_HANDLE = "@Chandlers_Detailing";
+export const TIKTOK_URL = "https://tiktok.com/@Chandlers_Detailing";
 
 export const FACEBOOK_URL = "https://facebook.com/chandlersdetailing";
 
-export const SERVICE_AREA = "Serving Southern California";
-export const SERVICE_AREA_DETAILS = "Los Angeles, Orange County, San Diego & surrounding areas";
+export const SERVICE_AREA = "Serving Lake Forest and Orange County";
+export const SERVICE_AREA_DETAILS = "Lake Forest, Irvine, Mission Viejo & surrounding areas";
 
 export const BUSINESS_HOURS = {
     standard: "Mon - Sat: 7am - 7pm",
