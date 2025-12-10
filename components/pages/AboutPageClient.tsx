@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
     Heart,
     Target,
@@ -33,22 +32,9 @@ function OurStory() {
     return (
         <section className="py-16 sm:py-24 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-                    <div className="relative max-w-xl w-full mx-auto">
-                        <div className="aspect-[4/3] rounded-3xl bg-primary-50 overflow-hidden relative shadow-lg">
-                            <Image
-                                src="/about-us.png"
-                                alt="Detailing specialist at work"
-                                fill
-                                sizes="(min-width: 1024px) 50vw, 100vw"
-                                className="object-cover"
-                            />
-                        </div>
-                        <div className="absolute -bottom-6 -right-6 w-32 h-32 rounded-2xl bg-primary-100/50 -z-10" />
-                        <div className="absolute -top-4 -left-4 w-24 h-24 rounded-full bg-primary-50/50 blur-xl" />
-                    </div>
-
-                    <div className="max-w-2xl mx-auto">
+                <div className="relative max-w-3xl mx-auto overflow-hidden rounded-3xl border border-primary-100 shadow-xl bg-gradient-to-br from-white via-white to-primary-50/70">
+                    <div className="absolute -right-20 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-primary-100 blur-3xl opacity-60" />
+                    <div className="relative z-10 p-8 sm:p-12">
                         <span className="text-primary-600 font-medium text-sm uppercase tracking-wider bg-primary-50 px-3 py-1 rounded-full">
                             Our Story
                         </span>
