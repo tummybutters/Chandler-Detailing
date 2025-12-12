@@ -438,7 +438,7 @@ function WhyChooseUs() {
           >
             <div className="aspect-square rounded-3xl bg-gradient-to-br from-primary-600/20 to-primary-900/10 glow-blue-lg overflow-hidden relative border border-white/10">
               <Image
-                src="/why-choose-us.png"
+                src="/why-choose-us.jpg"
                 alt="Premium detailing service"
                 fill
                 sizes="(min-width: 1024px) 45vw, 100vw"
