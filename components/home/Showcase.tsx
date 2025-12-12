@@ -5,13 +5,22 @@ import Image from "next/image";
 import { fadeUpVariants } from "@/lib/animations";
 
 const images = [
-    "/images/showcase/car-1.jpg",
-    "/images/showcase/car-2.jpg",
-    "/images/showcase/car-3.jpg",
-    "/images/showcase/car-4.jpg",
-    "/images/showcase/car-5.jpg",
-    "/images/showcase/car-6.jpg",
-    "/images/showcase/car-7.jpg",
+    "/images/showcase/showcase-01.jpg",
+    "/images/showcase/showcase-02.jpg",
+    "/images/showcase/showcase-03.jpg",
+    "/images/showcase/showcase-04.jpg",
+    "/images/showcase/showcase-05.jpg",
+    "/images/showcase/showcase-06.jpg",
+    "/images/showcase/showcase-07.jpg",
+    "/images/showcase/showcase-08.jpg",
+    "/images/showcase/showcase-09.jpg",
+    "/images/showcase/showcase-10.jpg",
+    "/images/showcase/showcase-11.jpg",
+    "/images/showcase/showcase-12.jpg",
+    "/images/showcase/showcase-13.jpg",
+    "/images/showcase/showcase-14.jpg",
+    "/images/showcase/showcase-15.jpg",
+    "/images/showcase/showcase-16.jpg",
 ];
 
 export default function Showcase() {
