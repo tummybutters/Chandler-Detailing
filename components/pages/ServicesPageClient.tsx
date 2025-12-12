@@ -124,15 +124,22 @@ function AddOns() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
                     {SERVICE_ADD_ONS.map((addon) => (
-                        <div
-                            key={addon.name}
-                            className="card p-6 text-center bg-white border border-gray-100"
-                        >
-                            <div className="w-12 h-12 mx-auto rounded-xl bg-primary-50 border border-primary-100 flex items-center justify-center mb-4">
-                                <addon.icon className="w-6 h-6 text-primary-600" />
+                        <div key={addon.name} className="relative group">
+                            <div
+                                className="card p-6 text-center bg-white border border-gray-100 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary-500"
+                                tabIndex={0}
+                                role="button"
+                                aria-label={`${addon.name} details`}
+                            >
+                                <div className="w-12 h-12 mx-auto rounded-xl bg-primary-50 border border-primary-100 flex items-center justify-center mb-4">
+                                    <addon.icon className="w-6 h-6 text-primary-600" />
+                                </div>
+                                <h4 className="text-gray-900 font-semibold text-sm mb-1">{addon.name}</h4>
+                                <p className="text-primary-600 font-bold">{addon.price}</p>
                             </div>
-                            <h4 className="text-gray-900 font-semibold text-sm mb-1">{addon.name}</h4>
-                            <p className="text-primary-600 font-bold">{addon.price}</p>
+                            <div className="pointer-events-none absolute left-1/2 top-full z-20 mt-2 w-64 -translate-x-1/2 rounded-2xl border border-primary-100 bg-white/95 p-4 text-left shadow-xl opacity-0 translate-y-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0 group-focus-within:opacity-100 group-focus-within:translate-y-0">
+                                <p className="text-sm text-gray-600">{addon.description}</p>
+                            </div>
                         </div>
                     ))}
                 </div>

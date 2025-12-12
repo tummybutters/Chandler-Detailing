@@ -33,6 +33,7 @@ export type ServiceAddOn = {
     icon: IconEntry;
     name: string;
     price: string;
+    description: string;
 };
 
 export type ServiceProcessStep = {
@@ -163,13 +164,48 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
 ];
 
 export const SERVICE_ADD_ONS: ServiceAddOn[] = [
-    { icon: Shield, name: "Clay + Seal (12-month protection)", price: "+$100" },
-    { icon: Sparkles, name: "Leather Protector / Sealant", price: "Upon request" },
-    { icon: Wrench, name: "Engine Bay Detail", price: "$75" },
-    { icon: Sun, name: "Headlight Restoration", price: "$60" },
-    { icon: Dog, name: "Pet Hair or Sand Removal", price: "+$30–$50" },
-    { icon: Droplets, name: "Spray Wax", price: "$49.99" },
-    { icon: Sparkles, name: "Machine Ceramic Wax", price: "Contact for Pricing" },
+    {
+        icon: Shield,
+        name: "Clay + Seal (12-month protection)",
+        price: "+$100",
+        description: "Removes embedded contaminants and lays down a 12-month ceramic sealant for lasting slickness.",
+    },
+    {
+        icon: Sparkles,
+        name: "Leather Protector / Sealant",
+        price: "Upon request",
+        description: "Conditioning treatment that nourishes leather while adding UV and stain resistance to keep seats supple.",
+    },
+    {
+        icon: Wrench,
+        name: "Engine Bay Detail",
+        price: "$75",
+        description: "Gentle degreasing, dressing, and protection for your engine bay so it looks showroom ready when the hood opens.",
+    },
+    {
+        icon: Sun,
+        name: "Headlight Restoration",
+        price: "$60",
+        description: "Multi-step sanding and polishing to clear oxidation and restore full nighttime visibility.",
+    },
+    {
+        icon: Dog,
+        name: "Pet Hair or Sand Removal",
+        price: "+$30–$50",
+        description: "Specialty brushes and extraction lift stubborn pet hair or beach sand from carpets and upholstery.",
+    },
+    {
+        icon: Droplets,
+        name: "Spray Wax",
+        price: "$49.99",
+        description: "Quick-apply spray wax that refreshes gloss, adds slick hydrophobic protection, and lasts up to 3 months.",
+    },
+    {
+        icon: Sparkles,
+        name: "Machine Ceramic Wax",
+        price: "Contact for Pricing",
+        description: "Machine-applied ceramic-infused wax layer that locks in shine and shields paint for up to 3 years.",
+    },
 ];
 
 export const SERVICE_PROCESS_STEPS: ServiceProcessStep[] = [
