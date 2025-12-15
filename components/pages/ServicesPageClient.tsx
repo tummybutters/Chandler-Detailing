@@ -71,17 +71,26 @@ function ServicePackages() {
                                 )}
                             </div>
 
-                            {pkg.pricingBreakdown && (
-                                <div className="mb-6 sm:mb-8 space-y-2">
-                                    <h4 className="font-semibold text-gray-900 text-sm mb-3">Vehicle Pricing</h4>
-                                    {pkg.pricingBreakdown.map((item, i) => (
-                                        <div key={i} className="flex justify-between text-sm py-2 border-b border-gray-100 last:border-0">
-                                            <span className="text-gray-600">{item.vehicleType}</span>
-                                            <span className="font-semibold text-primary-600">{item.price}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
+	                            {pkg.pricingBreakdown && pkg.pricingBreakdown.length > 0 && (
+	                                <div className="mb-6 sm:mb-8 space-y-2">
+	                                    <h4 className="font-semibold text-gray-900 text-sm mb-3">Vehicle Pricing</h4>
+	                                    <div className="grid grid-cols-[1fr_auto_auto] gap-4 text-xs font-semibold text-gray-500 uppercase tracking-wide px-0.5">
+	                                        <span>Vehicle</span>
+	                                        <span className="text-right">Price</span>
+	                                        <span className="text-right">Duration</span>
+	                                    </div>
+	                                    {pkg.pricingBreakdown.map((item, i) => (
+	                                        <div
+	                                            key={i}
+	                                            className="grid grid-cols-[1fr_auto_auto] gap-4 text-sm py-2 border-b border-gray-100 last:border-0"
+	                                        >
+	                                            <span className="text-gray-600">{item.vehicleType}</span>
+	                                            <span className="font-semibold text-primary-600 text-right">{item.price}</span>
+	                                            <span className="text-gray-500 text-right">{item.duration ?? "—"}</span>
+	                                        </div>
+	                                    ))}
+	                                </div>
+	                            )}
 
                             {pkg.features && pkg.features.length > 0 && (
                                 <ul className="space-y-3 mb-6 sm:mb-8">

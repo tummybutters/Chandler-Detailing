@@ -26,7 +26,7 @@ export type ServicePackage = {
     popular: boolean;
     description?: string;
     features: string[];
-    pricingBreakdown?: { vehicleType: string; price: string }[];
+    pricingBreakdown?: { vehicleType: string; price: string; duration?: string }[];
 };
 
 export type ServiceAddOn = {
@@ -80,58 +80,61 @@ export const SERVICE_PACKAGES: ServicePackage[] = [
     {
         id: "maintenance",
         name: "Maintenance Detail – Preservation Wash",
-        price: "Starting at $89.99",
+        price: "From $119",
         description: "Keeps your car fresh & protected between full details.",
         popular: false,
         features: [],
         pricingBreakdown: [
-            { vehicleType: "Coupe – 2 seats", price: "$89.99" },
-            { vehicleType: "Sedan – 4 doors", price: "$99.99" },
-            { vehicleType: "Small SUV / Truck", price: "$119.99" },
-            { vehicleType: "Large SUV / Truck", price: "$149.99" },
+            { vehicleType: "Truck", price: "$139", duration: "1-2 hrs" },
+            { vehicleType: "SUV – 7 Seat", price: "$149", duration: "1-2 hrs" },
+            { vehicleType: "SUV – 5 Seat", price: "$139", duration: "1-2 hrs" },
+            { vehicleType: "Sedan – 4 Door", price: "$129", duration: "1-2 hrs" },
+            { vehicleType: "Coupe – 2 Door", price: "$119", duration: "1-2 hrs" },
         ],
     },
     {
         id: "interior",
         name: "Interior Revival",
-        price: "Starting at $224.99",
+        price: "From $169",
         description: "Deep clean for that like-new interior.",
         popular: false,
         features: [],
         pricingBreakdown: [
-            { vehicleType: "Coupe – 2 seats", price: "$224.99" },
-            { vehicleType: "Sedan – 4 doors", price: "$249.99" },
-            { vehicleType: "Small SUV", price: "$274.99" },
-            { vehicleType: "Large SUV / Truck", price: "$324.99" },
+            { vehicleType: "Truck", price: "$209", duration: "2-3 hrs" },
+            { vehicleType: "SUV – 7 Seat", price: "$249", duration: "3-4 hrs" },
+            { vehicleType: "SUV – 5 Seat", price: "$219", duration: "2-3 hrs" },
+            { vehicleType: "Sedan – 4 Door", price: "$179", duration: "2-3 hrs" },
+            { vehicleType: "Coupe – 2 Door", price: "$169", duration: "2-3 hrs" },
         ],
     },
     {
         id: "exterior",
         name: "Exterior Gloss Restoration",
-        price: "Starting at $224.99",
+        price: "From $99",
         description: "Deep exterior clean & long-lasting gloss protection.",
         popular: false,
         features: [],
         pricingBreakdown: [
-            { vehicleType: "Coupe – 2 seats", price: "$224.99" },
-            { vehicleType: "Sedan – 4 doors", price: "$249.99" },
-            { vehicleType: "Small SUV", price: "$274.99" },
-            { vehicleType: "Large SUV / Truck", price: "$324.99" },
+            { vehicleType: "Truck", price: "$129", duration: "1-2 hrs" },
+            { vehicleType: "SUV – 7 Seat", price: "$129", duration: "1-2 hrs" },
+            { vehicleType: "SUV – 5 Seat", price: "$119", duration: "1-2 hrs" },
+            { vehicleType: "Sedan – 4 Door", price: "$109", duration: "1-2 hrs" },
+            { vehicleType: "Coupe – 2 Door", price: "$99", duration: "1-2 hrs" },
         ],
     },
     {
         id: "signature",
         name: "Signature Full Detail",
-        price: "Starting at $324.99",
+        price: "From $259",
         description: "Full inside & out detail with 6-month ceramic protection.",
         popular: true,
         features: [],
         pricingBreakdown: [
-            { vehicleType: "Coupe – 2 seats", price: "$324.99" },
-            { vehicleType: "Sedan – 4 doors", price: "$349.99" },
-            { vehicleType: "Small SUV / Truck", price: "$375.99" },
-            { vehicleType: "Large SUV / Truck", price: "$400.99" },
-            { vehicleType: "Oversized (Van, 3-row SUV)", price: "$425.99–$450.99" },
+            { vehicleType: "Truck", price: "$309", duration: "3-4 hrs" },
+            { vehicleType: "SUV – 7 Seat", price: "$319", duration: "4-5 hrs" },
+            { vehicleType: "SUV – 5 Seat", price: "$299", duration: "3-4 hrs" },
+            { vehicleType: "Sedan – 4 Door", price: "$279", duration: "3-4 hrs" },
+            { vehicleType: "Coupe – 2 Door", price: "$259", duration: "2-3 hrs" },
         ],
     },
     {
@@ -243,8 +246,8 @@ export const SERVICE_FAQS: ServiceFaq[] = [
 ];
 
 export const QUICK_SERVICE_OPTIONS: QuickServiceOption[] = [
-    { id: "maintenance", name: "Maintenance Detail", price: "From $89.99", duration: "1-2 hours", icon: Droplets },
-    { id: "interior", name: "Interior Revival", price: "From $224.99", duration: "3-4 hours", icon: Car },
-    { id: "exterior", name: "Exterior Gloss", price: "From $224.99", duration: "2-3 hours", icon: Sparkles },
-    { id: "signature", name: "Signature Full", price: "From $324.99", duration: "4-6 hours", icon: Shield },
+    { id: "maintenance", name: "Maintenance Detail", price: "From $119", duration: "1-2 hrs", icon: Droplets },
+    { id: "interior", name: "Interior Revival", price: "From $169", duration: "2-4 hrs", icon: Car },
+    { id: "exterior", name: "Exterior Gloss", price: "From $99", duration: "1-2 hrs", icon: Sparkles },
+    { id: "signature", name: "Signature Full", price: "From $259", duration: "2-5 hrs", icon: Shield },
 ];
