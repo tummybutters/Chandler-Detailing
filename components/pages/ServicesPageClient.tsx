@@ -36,6 +36,62 @@ function PageHeader() {
     );
 }
 
+function ImportantNotes() {
+    const [open, setOpen] = useState(false);
+
+    return (
+        <section className="py-6 bg-white border-b border-gray-100">
+            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className={`rounded-2xl border border-gray-200 bg-white overflow-hidden shadow-sm ${open ? "ring-2 ring-primary-100" : ""}`}>
+                    <button
+                        type="button"
+                        onClick={() => setOpen((v) => !v)}
+                        className="w-full p-5 sm:p-6 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
+                        aria-expanded={open}
+                    >
+                        <div className="pr-4">
+                            <h2 className="text-lg font-heading font-bold text-gray-900">Important Notes</h2>
+                            <p className="text-sm text-gray-500 mt-1">
+                                Mobile service available • Pricing may vary by vehicle condition
+                            </p>
+                        </div>
+                        <ChevronDown
+                            className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform ${open ? "rotate-180 text-primary-600" : ""}`}
+                        />
+                    </button>
+
+                    {open && (
+                        <div className="px-5 sm:px-6 pb-5 sm:pb-6 text-sm text-gray-600">
+                            <ul className="space-y-3">
+                                <li>
+                                    <span className="font-semibold text-gray-900">Mobile Service Available:</span>{" "}
+                                    Yes, we offer mobile detailing at your home or office for your convenience.
+                                </li>
+                                <li>
+                                    <span className="font-semibold text-gray-900">Additional Services:</span>{" "}
+                                    Engine detailing, ceramic coating, paint protection film, and odor removal available upon request.
+                                </li>
+                                <li>
+                                    <span className="font-semibold text-gray-900">Pricing Notes:</span>{" "}
+                                    Prices may vary based on vehicle condition.
+                                </li>
+                                <li>
+                                    <span className="font-semibold text-gray-900">Heavily Soiled Vehicles:</span>{" "}
+                                    Heavily soiled vehicles may incur additional charges. Call for a free quote.
+                                </li>
+                                <li>
+                                    <span className="font-semibold text-gray-900">Satisfaction Guaranteed:</span>{" "}
+                                    We stand behind our work with a 100% satisfaction guarantee.
+                                </li>
+                            </ul>
+                        </div>
+                    )}
+                </div>
+            </div>
+        </section>
+    );
+}
+
 function ServicePackages() {
     return (
         <section className="py-16 sm:py-24 bg-white">
@@ -231,6 +287,7 @@ export default function ServicesPageClient() {
     return (
         <>
             <PageHeader />
+            <ImportantNotes />
             <ServicePackages />
             <AddOns />
             <Process />
