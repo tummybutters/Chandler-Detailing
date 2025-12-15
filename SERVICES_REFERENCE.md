@@ -8,52 +8,42 @@
 
 ---
 
-## Maintenance Detail – Preservation Wash
-*Starting at $90+ — Keeps your car fresh & protected between full details.*
-
-| Vehicle Type | Price |
-| :--- | :--- |
-| Coupe – 2 seats | $89.99 |
-| Sedan – 4 doors | $99.99 |
-| Small SUV / Truck | $119.99 |
-| Large SUV / Truck | $149.99 |
-
----
-
 ## Interior Revival
-*Starting at $225+ — Deep clean for that like-new interior.*
+*Starting at $169 — Deep clean for that like-new interior.*
 
 | Vehicle Type | Price |
 | :--- | :--- |
-| Coupe – 2 seats | $224.99 |
-| Sedan – 4 doors | $249.99 |
-| Small SUV | $274.99 |
-| Large SUV / Truck | $324.99 |
+| Truck | $209 |
+| SUV – 7 Seat | $249 |
+| SUV – 5 Seat | $219 |
+| Sedan – 4 Door | $179 |
+| Coupe – 2 Door | $169 |
 
 ---
 
 ## Exterior Gloss Restoration
-*Starting at $225+ — Deep exterior clean & long-lasting gloss protection.*
+*Starting at $99 — Deep exterior clean & long-lasting gloss protection.*
 
 | Vehicle Type | Price |
 | :--- | :--- |
-| Coupe – 2 seats | $224.99 |
-| Sedan – 4 doors | $249.99 |
-| Small SUV | $274.99 |
-| Large SUV / Truck | $324.99 |
+| Truck | $129 |
+| SUV – 7 Seat | $129 |
+| SUV – 5 Seat | $119 |
+| Sedan – 4 Door | $109 |
+| Coupe – 2 Door | $99 |
 
 ---
 
 ## Signature Full Detail
-*Starting at $325+ — Full inside & out detail with 6-month ceramic protection.*
+*Starting at $259 — Full inside & out detail with 6-month ceramic protection.*
 
 | Vehicle Type | Price |
 | :--- | :--- |
-| Coupe – 2 seats | $324.99 |
-| Sedan – 4 doors | $349.99 |
-| Small SUV / Truck | $375.99 |
-| Large SUV / Truck | $400.99 |
-| Oversized (Van, 3-row SUV) | $425.99–$450.99 |
+| Truck | $309 |
+| SUV – 7 Seat | $319 |
+| SUV – 5 Seat | $299 |
+| Sedan – 4 Door | $279 |
+| Coupe – 2 Door | $259 |
 
 ---
 

@@ -28,7 +28,7 @@ function ServiceQuickLinks() {
         <section className="py-10 sm:py-12 bg-white border-y border-gray-100">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h3 className="text-xl font-heading font-semibold text-gray-900 mb-6 text-center">Our Services</h3>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     {QUICK_SERVICE_OPTIONS.map((service) => (
                         <div key={service.id} className="p-5 rounded-2xl bg-white border border-gray-100 text-left shadow-sm">
                             <service.icon className="w-8 h-8 mb-3 text-primary-600" />

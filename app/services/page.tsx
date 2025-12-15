@@ -4,7 +4,7 @@ import ServicesPageClient from "@/components/pages/ServicesPageClient";
 export const metadata: Metadata = {
   title: "Orange County Auto Detailing Services & Pricing",
   description:
-    "Explore Chandler's Detailing service menu including maintenance details, interior revivals, paint correction, and ceramic coating packages for Lake Forest, Irvine, Mission Viejo, and surrounding Orange County cities.",
+    "Explore Chandler's Detailing service menu including interior revivals, exterior gloss restoration, signature full details, paint correction, and ceramic coating packages for Lake Forest, Irvine, Mission Viejo, and surrounding Orange County cities.",
   alternates: {
     canonical: "/services",
   },

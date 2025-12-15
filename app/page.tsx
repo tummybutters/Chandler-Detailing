@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Orange County Mobile Car Detailing & Ceramic Coating",
     description:
-      "Chandler's Detailing delivers luxury-grade detailing, ceramic coating, and maintenance packages directly to your driveway anywhere in Orange County.",
+      "Chandler's Detailing delivers luxury-grade detailing and ceramic coating directly to your driveway anywhere in Orange County.",
     url: "/",
     images: [
       {

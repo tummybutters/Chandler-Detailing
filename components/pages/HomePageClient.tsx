@@ -154,51 +154,53 @@ function Hero() {
 
 // Services Preview Section
 function ServicesPreview() {
-  const mainServices = [
+  type ServiceCard = {
+    title: string;
+    description: string;
+    image: string;
+    price: string;
+    popular?: boolean;
+    disclaimer?: string;
+  };
+
+  const mainServices: ServiceCard[] = [
     {
       title: "SIGNATURE FULL DETAIL",
       description: "Experience the ultimate in automotive luxury with our comprehensive service that meticulously restores both your vehicle's interior comfort and exterior brilliance.",
       image: "/newherochandler.png",
-      price: "From $324.99",
+      price: "From $259",
       popular: true
     },
-    {
-      title: "INTERIOR REVIVAL",
-      description: "Revitalize your vehicle's cabin with our deep cleaning service that eliminates stains, odors, and restores that showroom freshness.",
-      image: "/interior-detail.jpg",
-      price: "From $224.99",
-      popular: false
-    },
-    {
-      title: "EXTERIOR GLOSS RESTORATION",
-      description: "Transform your vehicle's exterior with our premium washing and waxing service that delivers a pristine finish and lasting protection.",
-      image: "/exterior-detail.jpg",
-      price: "From $224.99",
-      popular: false
-    }
-  ];
+	    {
+	      title: "INTERIOR REVIVAL",
+	      description: "Revitalize your vehicle's cabin with our deep cleaning service that eliminates stains, odors, and restores that showroom freshness.",
+	      image: "/interior-detail.jpg",
+	      price: "From $169",
+	      popular: false
+	    },
+	    {
+	      title: "EXTERIOR GLOSS RESTORATION",
+	      description: "Transform your vehicle's exterior with our premium washing and waxing service that delivers a pristine finish and lasting protection.",
+	      image: "/exterior-detail.jpg",
+	      price: "From $99",
+	      popular: false
+	    }
+	  ];
 
-  const otherServices = [
+  const otherServices: ServiceCard[] = [
     {
       title: "PAINT CORRECTION",
       description: "Elevate your vehicle's appearance with our precision paint correction that eliminates scratches, swirls, and imperfections to reveal a mirror-like, flawless finish.",
       image: "/paint-correction.jpg",
       price: "Contact for Pricing"
-    },
-    {
-      title: "CERAMIC COATING",
-      description: "Invest in your vehicle's longevity with our premium ceramic coating packages (Bronze, Silver, Gold) that provide up to 5+ years of protection.",
-      image: "/ceramic-coating.jpg",
-      price: "Packages Available"
-    },
-    {
-      title: "MAINTENANCE DETAILS",
-      description: "Preserve your vehicle's pristine condition with our regular maintenance service that keeps both interior comfort and exterior appearance at their peak.",
-      image: "/maintenance-detail.jpg",
-      price: "From $89.99",
-      disclaimer: "Available only for returning customers who have received a full detail. This service maintains your vehicle between full details."
-    }
-  ];
+	    },
+	    {
+	      title: "CERAMIC COATING",
+	      description: "Invest in your vehicle's longevity with our premium ceramic coating packages (Bronze, Silver, Gold) that provide up to 5+ years of protection.",
+	      image: "/ceramic-coating.jpg",
+	      price: "Packages Available"
+	    }
+	  ];
 
   return (
     <section className="py-16 sm:py-24 bg-bg-dark relative">

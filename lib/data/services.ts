@@ -78,21 +78,6 @@ export const HOME_SERVICE_PREVIEW: ServicePreview[] = [
 
 export const SERVICE_PACKAGES: ServicePackage[] = [
     {
-        id: "maintenance",
-        name: "Maintenance Detail – Preservation Wash",
-        price: "From $119",
-        description: "Keeps your car fresh & protected between full details.",
-        popular: false,
-        features: [],
-        pricingBreakdown: [
-            { vehicleType: "Truck", price: "$139", duration: "1-2 hrs" },
-            { vehicleType: "SUV – 7 Seat", price: "$149", duration: "1-2 hrs" },
-            { vehicleType: "SUV – 5 Seat", price: "$139", duration: "1-2 hrs" },
-            { vehicleType: "Sedan – 4 Door", price: "$129", duration: "1-2 hrs" },
-            { vehicleType: "Coupe – 2 Door", price: "$119", duration: "1-2 hrs" },
-        ],
-    },
-    {
         id: "interior",
         name: "Interior Revival",
         price: "From $169",
@@ -221,7 +206,7 @@ export const SERVICE_PROCESS_STEPS: ServiceProcessStep[] = [
 export const SERVICE_FAQS: ServiceFaq[] = [
     {
         question: "How long does a detail take?",
-        answer: "Service times vary by package. Maintenance washes take about 1-2 hours, while our Signature Full Detail can take 4-6 hours. Ceramic coatings are full-day services. We'll provide an accurate estimate when you book.",
+        answer: "Service times vary by package and vehicle size/condition. Exterior services are typically 1-2 hours, interior services are usually 2-4 hours, and our Signature Full Detail typically takes 2-5 hours. Ceramic coatings are full-day services. We'll provide an accurate estimate when you book.",
     },
     {
         question: "Do I need to provide water or electricity?",
@@ -246,7 +231,6 @@ export const SERVICE_FAQS: ServiceFaq[] = [
 ];
 
 export const QUICK_SERVICE_OPTIONS: QuickServiceOption[] = [
-    { id: "maintenance", name: "Maintenance Detail", price: "From $119", duration: "1-2 hrs", icon: Droplets },
     { id: "interior", name: "Interior Revival", price: "From $169", duration: "2-4 hrs", icon: Car },
     { id: "exterior", name: "Exterior Gloss", price: "From $99", duration: "1-2 hrs", icon: Sparkles },
     { id: "signature", name: "Signature Full", price: "From $259", duration: "2-5 hrs", icon: Shield },
