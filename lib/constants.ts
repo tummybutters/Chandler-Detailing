@@ -1,6 +1,6 @@
 // Site-wide constants
 
-export const BOOKING_URL = "https://cal.com/chandlers-detailing";
+export const BOOKING_URL = "/booking";
 
 export const PHONE_NUMBER = "(949) 288-3648";
 export const PHONE_LINK = "tel:+19492883648";

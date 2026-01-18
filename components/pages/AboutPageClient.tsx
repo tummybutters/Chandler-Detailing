@@ -36,24 +36,29 @@ function OurStory() {
                     <div className="absolute -right-20 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-primary-100 blur-3xl opacity-60" />
                     <div className="relative z-10 p-8 sm:p-12">
                         <span className="text-primary-600 font-medium text-sm uppercase tracking-wider bg-primary-50 px-3 py-1 rounded-full">
-                            Our Story
+                            About Chandler
                         </span>
                         <h2 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mt-6">
-                            Born from a <span className="text-primary-600">Passion</span> for Cars
+                            About <span className="text-primary-600">Chandler</span>
                         </h2>
                         <div className="space-y-4 mt-6 text-gray-600 leading-relaxed text-base sm:text-lg">
                             <p>
-                                I&apos;m a college student at Long Beach State doing this completely on my own to pay for school and flight school.
-                                Chandler&apos;s Detailing started as a way to fund my education, but it quickly became my passion.
+                                I started Chandler&apos;s Detailing &amp; Protection with a clear goal: build a business that supports my passion for flying while serving my community and family.
+                                What began as a side hustle has grown into something I&apos;m genuinely proud of.
                             </p>
                             <p>
-                                I started detailing to build something for myself and create a future I could be proud of.
-                                Every car I work on represents a step towards my goals, which is why I take such immense pride in my work.
+                                Right now, I&apos;m balancing a lot--finishing my associate&apos;s degree at Saddleback College (graduating this year!) while preparing to transfer for my bachelor&apos;s.
+                                But school isn&apos;t all I&apos;m focused on. I&apos;m also coaching a 12U baseball team, running this detailing business,
+                                and working toward my pilot&apos;s license. It&apos;s a full plate, and that&apos;s exactly why I&apos;ve built this business to be efficient, professional, and reliable.
                             </p>
                             <p>
-                                This isn&apos;t just a job for me; it&apos;s how I&apos;m making my future happen.
-                                When you book with me, you&apos;re supporting a local student who is committed to excellence
-                                and driven to succeed—both on the ground in your driveway and eventually in the sky.
+                                I believe in doing things the right way. Every vehicle that leaves my hands gets the same attention and care I&apos;d want for my own.
+                                Whether it&apos;s protecting your paint with ceramic coating, reviving your interior, or keeping your fleet looking sharp, I take pride in the work.
+                                My customers aren&apos;t just transactions--they&apos;re part of what makes this business sustainable while I chase my bigger goals.
+                            </p>
+                            <p>
+                                The hustle is real, but it&apos;s worth it. I&apos;m proving you can be a student, an entrepreneur, a mentor, and someone chasing your dreams all at the same time--and doing it with integrity.
+                                Thanks for supporting local. It means everything.
                             </p>
                         </div>
                     </div>
