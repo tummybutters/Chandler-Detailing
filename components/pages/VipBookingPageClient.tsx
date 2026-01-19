@@ -96,9 +96,11 @@ export default function VipBookingPageClient() {
 
         let scrollInterval: NodeJS.Timeout;
         let lastScrollTime = Date.now();
+        let isScrolling = false;
+        let scrollTimeout: NodeJS.Timeout;
 
         const autoScroll = () => {
-            if (isPaused) return;
+            if (isPaused || isScrolling) return;
 
             const now = Date.now();
             if (now - lastScrollTime < 3000) return;
@@ -111,21 +113,36 @@ export default function VipBookingPageClient() {
             lastScrollTime = now;
         };
 
-        // Separate interval to check for reset (runs more frequently)
+        // Check for reset only when not actively scrolling
         const checkReset = () => {
+            if (isScrolling) return;
+
             const scrollWidth = carousel.scrollWidth;
             const clientWidth = carousel.clientWidth;
             const scrollLeft = carousel.scrollLeft;
-            const totalItemsWidth = scrollWidth / 2; // Since we duplicated items
+            const itemsWidth = scrollWidth / 2; // Half because items are duplicated
 
-            // If we've scrolled past the original set, instantly reset
-            if (scrollLeft >= totalItemsWidth - clientWidth) {
+            // Only reset when we're well into the duplicate section (past 80% of original items)
+            const resetThreshold = itemsWidth * 0.8;
+
+            if (scrollLeft >= resetThreshold) {
                 carousel.scrollTo({ left: 0, behavior: 'auto' });
             }
         };
 
+        // Track scrolling state
+        const handleScroll = () => {
+            isScrolling = true;
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                isScrolling = false;
+            }, 150);
+        };
+
+        carousel.addEventListener('scroll', handleScroll);
+
         scrollInterval = setInterval(autoScroll, 3500);
-        const resetInterval = setInterval(checkReset, 100);
+        const resetInterval = setInterval(checkReset, 200);
 
         // Pause on touch/mouse interaction
         const handleInteractionStart = () => {
@@ -144,16 +161,16 @@ export default function VipBookingPageClient() {
         carousel.addEventListener('mousedown', handleInteractionStart);
         carousel.addEventListener('touchend', handleInteractionEnd);
         carousel.addEventListener('mouseup', handleInteractionEnd);
-        carousel.addEventListener('scroll', handleInteractionStart);
 
         return () => {
             clearInterval(scrollInterval);
             clearInterval(resetInterval);
+            clearTimeout(scrollTimeout);
+            carousel.removeEventListener('scroll', handleScroll);
             carousel.removeEventListener('touchstart', handleInteractionStart);
             carousel.removeEventListener('mousedown', handleInteractionStart);
             carousel.removeEventListener('touchend', handleInteractionEnd);
             carousel.removeEventListener('mouseup', handleInteractionEnd);
-            carousel.removeEventListener('scroll', handleInteractionStart);
         };
     }, [isPaused]);
 
