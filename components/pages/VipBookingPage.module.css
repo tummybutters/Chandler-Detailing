@@ -226,12 +226,14 @@
     grid-column: 9 / span 3;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1024px) and (min-width: 768px) {
     .collageGrid {
+        display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-auto-rows: clamp(160px, 26vw, 230px);
-        gap: 6px;
-        row-gap: 20px;
+        grid-auto-rows: clamp(180px, 28vw, 250px);
+        gap: 12px;
+        row-gap: 24px;
+        padding: 1rem;
     }
 
     .collageItem {
@@ -242,7 +244,7 @@
     }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 767px) {
     .collageContainer {
         padding: 0 0 2rem;
         overflow: visible;
