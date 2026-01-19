@@ -118,9 +118,13 @@ export default function VipBookingPageClient() {
                         </div>
                     </div>
 
-                    <div className="mt-10 rounded-2xl border border-white/10 bg-black/60 px-5 py-4 sm:px-6 sm:py-5 shadow-[0_12px_30px_rgba(0,0,0,0.5)]">
-                        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                            <div className="flex items-center gap-3">
+                    <div className="mt-10 rounded-2xl border border-white/10 bg-black/60 p-4 sm:p-6 shadow-[0_12px_30px_rgba(0,0,0,0.5)] relative overflow-hidden">
+                        {/* Background glow effect */}
+                        <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-l from-[#38bdf8]/10 to-transparent blur-3xl pointer-events-none" />
+
+                        <div className="relative z-10">
+                            {/* Header with team info */}
+                            <div className="flex items-center gap-3 mb-6">
                                 <div className="w-12 h-12 rounded-full border border-white/20 bg-white/5 flex items-center justify-center overflow-hidden">
                                     {logoError ? (
                                         <span className="text-lg font-heading font-bold text-white">V</span>
@@ -142,30 +146,82 @@ export default function VipBookingPageClient() {
                                 </div>
                             </div>
 
-                            <div className="flex-1 sm:px-6">
-                                <div className="flex items-center justify-between text-[0.7rem] uppercase tracking-[0.2em] text-white/50 mb-3">
-                                    <span>Raised {formatCurrency(FUNDRAISER.raised)}</span>
-                                    <span>Goal {formatCurrency(FUNDRAISER.goal)}</span>
+                            {/* Progress bar with images */}
+                            <div className="flex flex-col md:flex-row items-center gap-6">
+                                {/* Left: Kids team image */}
+                                <div className="relative w-32 h-32 md:w-40 md:h-40 flex-shrink-0">
+                                    <div className="absolute inset-0 rounded-2xl border-2 border-[#38bdf8]/30 bg-gradient-to-br from-[#38bdf8]/10 to-transparent overflow-hidden shadow-lg">
+                                        <Image
+                                            src="/team-bench.png"
+                                            alt="Vigilantes 12U Grey Team"
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
+                                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-[#38bdf8] text-black text-xs font-bold px-3 py-1 rounded-full border-2 border-black shadow-md whitespace-nowrap">
+                                        Starting Line
+                                    </div>
                                 </div>
-                                <div
-                                    className={styles.cylinder}
-                                    style={{ "--progress": `${progressPercent}%` } as CSSProperties}
-                                >
-                                    <div className={styles.cylinderFill} />
-                                    <div className={styles.cylinderMarker}>
-                                        <span>{formatCurrency(FUNDRAISER.raised)}</span>
+
+                                {/* Center: Progress bar */}
+                                <div className="flex-1 w-full">
+                                    <div className="flex items-center justify-between text-[0.7rem] uppercase tracking-[0.2em] text-white/50 mb-3">
+                                        <span>Raised {formatCurrency(FUNDRAISER.raised)}</span>
+                                        <span>Goal {formatCurrency(FUNDRAISER.goal)}</span>
+                                    </div>
+                                    <div
+                                        className={styles.cylinder}
+                                        style={{ "--progress": `${progressPercent}%` } as CSSProperties}
+                                    >
+                                        <div className={styles.cylinderFill} />
+                                        <div className={styles.cylinderMarker}>
+                                            <span>{formatCurrency(FUNDRAISER.raised)}</span>
+                                        </div>
+                                    </div>
+                                    <div className="mt-3 text-xs text-white/70 text-center">
+                                        <div className="font-semibold text-white">Remaining {FUNDRAISER.remainingRange}</div>
+                                        <div className="text-white/50">Projected {formatCurrency(FUNDRAISER.projected)}</div>
+                                    </div>
+                                </div>
+
+                                {/* Right: Cooperstown grand prize */}
+                                <div className="relative w-40 h-40 md:w-48 md:h-48 flex-shrink-0">
+                                    {/* Trophy/Grand Prize container */}
+                                    <div className="absolute inset-0 rounded-2xl border-4 border-[#fbbf24] bg-gradient-to-br from-[#fbbf24]/20 to-[#f59e0b]/10 overflow-hidden shadow-[0_0_30px_rgba(251,191,36,0.3)]">
+                                        {/* Dual image display */}
+                                        <div className="relative w-full h-full">
+                                            <div className="absolute inset-0 grid grid-cols-1 grid-rows-2">
+                                                <div className="relative overflow-hidden">
+                                                    <Image
+                                                        src="/cooperstown-stadium.jpg"
+                                                        alt="Cooperstown Dreams Park"
+                                                        fill
+                                                        className="object-cover"
+                                                    />
+                                                </div>
+                                                <div className="relative overflow-hidden">
+                                                    <Image
+                                                        src="/cooperstown-team.jpg"
+                                                        alt="Team at Cooperstown"
+                                                        fill
+                                                        className="object-cover"
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {/* Grand Prize label */}
+                                    <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-gradient-to-r from-[#fbbf24] to-[#f59e0b] text-black text-xs font-bold px-3 py-1 rounded-full border-2 border-black shadow-md whitespace-nowrap flex items-center gap-1">
+                                        <span className="text-base">🏆</span>
+                                        COOPERSTOWN
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="text-xs text-white/70 sm:text-right">
-                                <div className="font-semibold text-white">Remaining {FUNDRAISER.remainingRange}</div>
-                                <div className="text-white/50">Projected {formatCurrency(FUNDRAISER.projected)}</div>
-                            </div>
+                            <p className="mt-6 text-[0.7rem] text-white/50 text-center">
+                                Mention "{FUNDRAISER.noteLabel}" in the notes so we can track your booking.
+                            </p>
                         </div>
-                        <p className="mt-3 text-[0.7rem] text-white/50">
-                            Mention "{FUNDRAISER.noteLabel}" in the notes so we can track your booking.
-                        </p>
                     </div>
 
                     <div className="mt-8 flex items-center gap-3 text-[0.65rem] uppercase tracking-[0.35em] text-white/40">
@@ -203,19 +259,32 @@ export default function VipBookingPageClient() {
                 </div>
             </section>
 
-            <section className="py-16 sm:py-20 bg-[#0f0f0f] border-y border-white/10">
+            <section className="py-16 sm:py-20 bg-[#0f0f0f] border-y border-white/10 overflow-visible">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pb-64 md:pb-80">
                         {BOOKING_STEPS.map((step) => (
                             <div
                                 key={step.number}
-                                className="relative bg-white text-black border-4 border-black rounded-2xl p-6 shadow-[8px_8px_0_#000] min-h-[200px]"
+                                className="relative bg-white text-black border-4 border-black rounded-2xl p-6 shadow-[8px_8px_0_#000] min-h-[200px] overflow-visible"
                             >
                                 <div className="absolute -top-4 left-6 w-10 h-10 rounded-md bg-gradient-to-br from-[#38bdf8] to-[#0ea5e9] text-black border-2 border-black flex items-center justify-center font-bold">
                                     {step.number}
                                 </div>
                                 <h3 className="mt-6 text-xl font-heading font-bold uppercase">{step.title}</h3>
                                 <p className="text-sm text-black/70 mt-3">{step.description}</p>
+
+                                {/* Kids image on step 3 - sitting on top with feet hanging off */}
+                                {step.number === "3" && (
+                                    <div className="absolute -bottom-[113px] md:-bottom-[145px] left-1/2 -translate-x-1/2 w-[192px] md:w-[228px] z-30 pointer-events-none">
+                                        <Image
+                                            src="/kids-team.png"
+                                            alt="Vigilantes 12U Grey Team"
+                                            width={228}
+                                            height={171}
+                                            className="w-full h-auto drop-shadow-2xl"
+                                        />
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </div>

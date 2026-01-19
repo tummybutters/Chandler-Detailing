@@ -83,27 +83,27 @@ function Hero() {
               Don't leave your vehicle's value to chance. We provide professional care that keeps your car looking new for years to come.
             </motion.h2>
 
-	            {/* CTAs */}
-	            <motion.div
-	              variants={fadeUpVariants}
-	              className="flex flex-col sm:flex-row gap-3 pt-6 w-full max-w-xl"
-	            >
-	              <ShinyButton
-	                href={BOOKING_URL}
-	                target="_blank"
-	                rel="noopener noreferrer"
-	                className="inline-flex items-center justify-center gap-2 shadow-lg shadow-primary-900/20 w-full sm:w-64 lg:w-72 px-5 py-3 text-base sm:text-lg"
-	              >
-	                Book Appointment
-	                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-	              </ShinyButton>
-	              <Link
-	                href="/services"
-	                className="px-5 py-3 rounded-full font-semibold text-base sm:text-lg inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all w-full sm:w-64 lg:w-72 text-center"
-	              >
-	                View Services
-	              </Link>
-	            </motion.div>
+            {/* CTAs */}
+            <motion.div
+              variants={fadeUpVariants}
+              className="flex flex-col sm:flex-row gap-3 pt-6 w-full max-w-xl"
+            >
+              <ShinyButton
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 shadow-lg shadow-primary-900/20 w-full sm:w-64 lg:w-72 px-5 py-3 text-base sm:text-lg"
+              >
+                Book Appointment
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </ShinyButton>
+              <Link
+                href="/services"
+                className="px-5 py-3 rounded-full font-semibold text-base sm:text-lg inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 text-white hover:bg-white/20 transition-all w-full sm:w-64 lg:w-72 text-center"
+              >
+                View Services
+              </Link>
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 40 }}
@@ -171,21 +171,21 @@ function ServicesPreview() {
       price: "From $259",
       popular: true
     },
-	    {
-	      title: "INTERIOR REVIVAL",
-	      description: "Revitalize your vehicle's cabin with our deep cleaning service that eliminates stains, odors, and restores that showroom freshness.",
-	      image: "/interior-detail.jpg",
-	      price: "From $169",
-	      popular: false
-	    },
-	    {
-	      title: "EXTERIOR GLOSS RESTORATION",
-	      description: "Transform your vehicle's exterior with our premium washing and waxing service that delivers a pristine finish and lasting protection.",
-	      image: "/exterior-detail.jpg",
-	      price: "From $99",
-	      popular: false
-	    }
-	  ];
+    {
+      title: "INTERIOR REVIVAL",
+      description: "Revitalize your vehicle's cabin with our deep cleaning service that eliminates stains, odors, and restores that showroom freshness.",
+      image: "/interior-detail.jpg",
+      price: "From $169",
+      popular: false
+    },
+    {
+      title: "EXTERIOR GLOSS RESTORATION",
+      description: "Transform your vehicle's exterior with our premium washing and waxing service that delivers a pristine finish and lasting protection.",
+      image: "/exterior-detail.jpg",
+      price: "From $99",
+      popular: false
+    }
+  ];
 
   const otherServices: ServiceCard[] = [
     {
@@ -193,14 +193,14 @@ function ServicesPreview() {
       description: "Elevate your vehicle's appearance with our precision paint correction that eliminates scratches, swirls, and imperfections to reveal a mirror-like, flawless finish.",
       image: "/paint-correction.jpg",
       price: "Contact for Pricing"
-	    },
-	    {
-	      title: "CERAMIC COATING",
-	      description: "Invest in your vehicle's longevity with our premium ceramic coating packages (Bronze, Silver, Gold) that provide up to 5+ years of protection.",
-	      image: "/ceramic-coating.jpg",
-	      price: "Packages Available"
-	    }
-	  ];
+    },
+    {
+      title: "CERAMIC COATING",
+      description: "Invest in your vehicle's longevity with our premium ceramic coating packages (Bronze, Silver, Gold) that provide up to 5+ years of protection.",
+      image: "/ceramic-coating.jpg",
+      price: "Packages Available"
+    }
+  ];
 
   return (
     <section className="py-16 sm:py-24 bg-bg-dark relative">
