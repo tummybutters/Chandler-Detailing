@@ -21,7 +21,7 @@ These notes outline the required changes for the Chandler's Detailing website ba
 
 ## 4. Contact Info & Socials
 Update the following details across the site (Header/Footer/Contact Page):
-- **Phone:** (949) 288-3648
+- **Phone:** +1 (714) 328-0210
 - **Email:** hazlettc33@gmail.com
 - **Instagram:** [@Chandlers_Detailing](https://instagram.com/Chandlers_Detailing)
 - **TikTok:** [@Chandlers_Detailing](https://tiktok.com/@Chandlers_Detailing)

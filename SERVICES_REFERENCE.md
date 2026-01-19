@@ -1,7 +1,7 @@
 # Chandler's Detailing Services & Pricing Reference
 
 **Contact:**
-- Call or text: (949) 422-1196
+- Call or text: +1 (714) 328-0210
 - Instagram: [@chandlers_detailing](https://instagram.com/chandlers_detailing)
 
 > **Note:** Spots for this week and month are filling up fast — book now!

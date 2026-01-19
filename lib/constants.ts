@@ -2,8 +2,8 @@
 
 export const BOOKING_URL = "/booking";
 
-export const PHONE_NUMBER = "(949) 288-3648";
-export const PHONE_LINK = "tel:+19492883648";
+export const PHONE_NUMBER = "+1 (714) 328-0210";
+export const PHONE_LINK = "tel:+17143280210";
 
 export const EMAIL = "hazlettc33@gmail.com";
 export const EMAIL_LINK = "mailto:hazlettc33@gmail.com";
