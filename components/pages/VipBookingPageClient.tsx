@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import Script from "next/script";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import type { CSSProperties } from "react";
-import { ArrowRight, Check, Phone } from "lucide-react";
+import { ArrowRight, Check, Phone, ChevronLeft, ChevronRight } from "lucide-react";
 import { PHONE_LINK, PHONE_NUMBER } from "@/lib/constants";
 import ShinyButton from "@/components/ui/ShinyButton";
 import styles from "./VipBookingPage.module.css";
@@ -85,6 +85,107 @@ export default function VipBookingPageClient() {
     const [logoError, setLogoError] = useState(false);
     const progress = Math.min(FUNDRAISER.raised / FUNDRAISER.goal, 1);
     const progressPercent = Math.round(progress * 100);
+
+    // Carousel auto-scroll
+    const carouselRef = useRef<HTMLDivElement>(null);
+    const [isPaused, setIsPaused] = useState(false);
+
+    useEffect(() => {
+        const carousel = carouselRef.current;
+        if (!carousel) return;
+
+        let scrollInterval: NodeJS.Timeout;
+        let lastScrollTime = Date.now();
+
+        const autoScroll = () => {
+            if (isPaused) return;
+
+            const now = Date.now();
+            if (now - lastScrollTime < 3000) return;
+
+            const itemWidth = carousel.querySelector('button')?.offsetWidth || 300;
+            const gap = 12;
+            const scrollAmount = itemWidth + gap;
+
+            carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            lastScrollTime = now;
+        };
+
+        // Separate interval to check for reset (runs more frequently)
+        const checkReset = () => {
+            const scrollWidth = carousel.scrollWidth;
+            const clientWidth = carousel.clientWidth;
+            const scrollLeft = carousel.scrollLeft;
+            const totalItemsWidth = scrollWidth / 2; // Since we duplicated items
+
+            // If we've scrolled past the original set, instantly reset
+            if (scrollLeft >= totalItemsWidth - clientWidth) {
+                carousel.scrollTo({ left: 0, behavior: 'auto' });
+            }
+        };
+
+        scrollInterval = setInterval(autoScroll, 3500);
+        const resetInterval = setInterval(checkReset, 100);
+
+        // Pause on touch/mouse interaction
+        const handleInteractionStart = () => {
+            setIsPaused(true);
+            lastScrollTime = Date.now();
+        };
+
+        const handleInteractionEnd = () => {
+            setTimeout(() => {
+                setIsPaused(false);
+                lastScrollTime = Date.now();
+            }, 2000);
+        };
+
+        carousel.addEventListener('touchstart', handleInteractionStart);
+        carousel.addEventListener('mousedown', handleInteractionStart);
+        carousel.addEventListener('touchend', handleInteractionEnd);
+        carousel.addEventListener('mouseup', handleInteractionEnd);
+        carousel.addEventListener('scroll', handleInteractionStart);
+
+        return () => {
+            clearInterval(scrollInterval);
+            clearInterval(resetInterval);
+            carousel.removeEventListener('touchstart', handleInteractionStart);
+            carousel.removeEventListener('mousedown', handleInteractionStart);
+            carousel.removeEventListener('touchend', handleInteractionEnd);
+            carousel.removeEventListener('mouseup', handleInteractionEnd);
+            carousel.removeEventListener('scroll', handleInteractionStart);
+        };
+    }, [isPaused]);
+
+    // Navigation functions
+    const scrollToNext = () => {
+        const carousel = carouselRef.current;
+        if (!carousel) return;
+
+        const itemWidth = carousel.querySelector('button')?.offsetWidth || 300;
+        const scrollAmount = itemWidth + 12;
+        carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    };
+
+    const scrollToPrev = () => {
+        const carousel = carouselRef.current;
+        if (!carousel) return;
+
+        const itemWidth = carousel.querySelector('button')?.offsetWidth || 300;
+        const scrollAmount = itemWidth + 12;
+
+        // If near the start, jump to end of first set
+        if (carousel.scrollLeft < scrollAmount) {
+            const scrollWidth = carousel.scrollWidth;
+            const totalItemsWidth = scrollWidth / 2;
+            carousel.scrollTo({ left: totalItemsWidth - scrollAmount, behavior: 'auto' });
+            setTimeout(() => {
+                carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            }, 50);
+        } else {
+            carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        }
+    };
 
     return (
         <div className="bg-[#0b0b0b] text-white">
@@ -218,9 +319,15 @@ export default function VipBookingPageClient() {
                                 </div>
                             </div>
 
-                            <p className="mt-6 text-[0.7rem] text-white/50 text-center">
-                                Mention "{FUNDRAISER.noteLabel}" in the notes so we can track your booking.
-                            </p>
+                            {/* Important Note - Enhanced */}
+                            <div className="mt-6 p-4 rounded-xl border-2 border-[#38bdf8] bg-gradient-to-r from-[#38bdf8]/10 to-[#0ea5e9]/10 shadow-[0_0_20px_rgba(56,189,248,0.3)]">
+                                <p className="text-center font-bold text-white flex items-center justify-center gap-2">
+                                    <span className="text-xl">⚠️</span>
+                                    <span className="text-sm sm:text-base">
+                                        Important: Mention <span className="text-[#38bdf8]">"{FUNDRAISER.noteLabel}"</span> in the notes so we can track your booking!
+                                    </span>
+                                </p>
+                            </div>
                         </div>
                     </div>
 
@@ -229,31 +336,51 @@ export default function VipBookingPageClient() {
                         Proof from local drivers
                     </div>
                     <div className={styles.collageContainer}>
-                        <div className={styles.collageGrid}>
-                            {COLLAGE_ITEMS.map((item, index) => {
-                                const isOpen = openIndex === index;
-                                return (
-                                    <button
-                                        key={item.reviewer}
-                                        type="button"
-                                        className={`${styles.collageItem} ${isOpen ? styles.isOpen : ""}`}
-                                        onClick={() => setOpenIndex(isOpen ? null : index)}
-                                        aria-pressed={isOpen}
-                                    >
-                                        <Image
-                                            src={item.image}
-                                            alt={`${item.reviewer} review`}
-                                            fill
-                                            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 80vw"
-                                            className={styles.collageImage}
-                                        />
-                                        <div className={styles.collageReview}>
-                                            <p>&ldquo;{item.quote}&rdquo;</p>
-                                            <div className={styles.collageReviewer}>{item.reviewer} *****</div>
-                                        </div>
-                                    </button>
-                                );
-                            })}
+                        {/* Navigation Arrows - Mobile Only */}
+                        <div className="relative">
+                            <button
+                                onClick={scrollToPrev}
+                                className="md:hidden absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-black/80 backdrop-blur-sm border-2 border-white/20 text-white p-2 rounded-full hover:bg-black hover:border-primary-400 transition-all shadow-lg"
+                                aria-label="Previous image"
+                            >
+                                <ChevronLeft className="w-5 h-5" />
+                            </button>
+
+                            <div ref={carouselRef} className={styles.collageGrid}>
+                                {/* Render items twice for infinite scroll effect */}
+                                {[...COLLAGE_ITEMS, ...COLLAGE_ITEMS].map((item, index) => {
+                                    const isOpen = openIndex === index;
+                                    return (
+                                        <button
+                                            key={`${item.reviewer}-${index}`}
+                                            type="button"
+                                            className={`${styles.collageItem} ${isOpen ? styles.isOpen : ""}`}
+                                            onClick={() => setOpenIndex(isOpen ? null : index)}
+                                            aria-pressed={isOpen}
+                                        >
+                                            <Image
+                                                src={item.image}
+                                                alt={`${item.reviewer} review`}
+                                                fill
+                                                sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 80vw"
+                                                className={styles.collageImage}
+                                            />
+                                            <div className={styles.collageReview}>
+                                                <p>&ldquo;{item.quote}&rdquo;</p>
+                                                <div className={styles.collageReviewer}>{item.reviewer} *****</div>
+                                            </div>
+                                        </button>
+                                    );
+                                })}
+                            </div>
+
+                            <button
+                                onClick={scrollToNext}
+                                className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-black/80 backdrop-blur-sm border-2 border-white/20 text-white p-2 rounded-full hover:bg-black hover:border-primary-400 transition-all shadow-lg"
+                                aria-label="Next image"
+                            >
+                                <ChevronRight className="w-5 h-5" />
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -355,8 +482,21 @@ export default function VipBookingPageClient() {
                         </div>
                     </div>
 
-                    <div className="mt-6 text-center text-sm text-white/70">
-                        Add &ldquo;{FUNDRAISER.noteLabel}&rdquo; in the note field so your booking supports the team.
+                    {/* Important Booking Note - Enhanced */}
+                    <div className="mt-6 mx-auto max-w-2xl">
+                        <div className="p-5 rounded-2xl border-3 border-[#38bdf8] bg-gradient-to-br from-[#38bdf8]/15 to-[#0ea5e9]/15 shadow-[0_0_30px_rgba(56,189,248,0.4)] animate-pulse-subtle">
+                            <div className="flex items-start gap-3">
+                                <span className="text-2xl mt-0.5 flex-shrink-0">⚠️</span>
+                                <div className="flex-1">
+                                    <p className="text-white font-bold text-lg mb-1 text-center sm:text-left">
+                                        Don't Forget!
+                                    </p>
+                                    <p className="text-white/90 text-sm sm:text-base text-center sm:text-left">
+                                        Add <span className="font-bold text-[#38bdf8] bg-white/10 px-2 py-0.5 rounded">"{FUNDRAISER.noteLabel}"</span> in the note field so 30% supports the team!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
