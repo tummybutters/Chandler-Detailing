@@ -350,11 +350,12 @@ export default function VipBookingPageClient() {
                                 {/* Render items twice for infinite scroll effect */}
                                 {[...COLLAGE_ITEMS, ...COLLAGE_ITEMS].map((item, index) => {
                                     const isOpen = openIndex === index;
+                                    const isDuplicate = index >= COLLAGE_ITEMS.length;
                                     return (
                                         <button
                                             key={`${item.reviewer}-${index}`}
                                             type="button"
-                                            className={`${styles.collageItem} ${isOpen ? styles.isOpen : ""}`}
+                                            className={`${styles.collageItem} ${isOpen ? styles.isOpen : ""} ${isDuplicate ? 'md:hidden' : ''}`}
                                             onClick={() => setOpenIndex(isOpen ? null : index)}
                                             aria-pressed={isOpen}
                                         >
